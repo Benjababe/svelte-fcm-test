@@ -50,7 +50,7 @@
 
     <p>Notification Permission: {notificationPermission}</p>
     {#if token.length > 0}
-      <p>FCM Token: {token.substring(0, 20)}...</p>
+      <p>FCM Token: {token}</p>
     {/if}
     {#if lastMessage.length > 0}
       <p>Last Message: {lastMessage}</p>
