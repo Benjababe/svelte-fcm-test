@@ -14,9 +14,11 @@
       notificationPermission = permission;
 
       if (permission === 'granted') {
+        const swRegistration = await navigator.serviceWorker.register('/firebase-messaging-sw.js');
         const currentToken = await getToken(messaging, {
           vapidKey:
-            'BEypjTgqKdqdf7aWAKcXzaf7SUuowHwDGZwPcaTcB8ovKcJ1HDc_iQa7Ow-C_1cm8ybBq4sCagK4CAFj1V8E1Vc'
+            'BEypjTgqKdqdf7aWAKcXzaf7SUuowHwDGZwPcaTcB8ovKcJ1HDc_iQa7Ow-C_1cm8ybBq4sCagK4CAFj1V8E1Vc',
+          serviceWorkerRegistration: swRegistration
         });
         if (currentToken) {
           token = currentToken;
