@@ -35,11 +35,7 @@
   onMount(() => {
     onMessage(messaging, (payload) => {
       console.log('Foreground message:', payload);
-      if (payload.notification !== undefined) {
-        if (payload.notification.body !== undefined) {
-          lastMessage = payload.notification.body;
-        }
-      }
+      lastMessage = JSON.stringify(payload);
     });
   });
 </script>
